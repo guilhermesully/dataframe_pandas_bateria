@@ -1,6 +1,6 @@
 # dataframe_pandas_bateria
-PROJETO - ESTRUTURA DE DADOS I - D3_ (Mat)
-Guilherme Silva do Nascimento - RGM: 1435882999
+#PROJETO - ESTRUTURA DE DADOS I - D3_ (Mat)
+#Guilherme Silva do Nascimento - RGM: 1435882999
 
 Esse projeto foi desenvolvido com conceitos avançados de um nicho bem especifico, sobre um componente
 musical que exista em um Drum, os Crashs, Rides e Efects.
