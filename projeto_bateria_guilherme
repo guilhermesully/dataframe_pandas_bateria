@@ -1,0 +1,77 @@
+import pandas as pd
+# importamos a biblioteca para poder utilizar dos seus métodos
+# Vamos fazer um dict sobre Crashs, Rides e Efects (Ataque, Condução e Efeito)
+modelos = ["Crash Zildjian KCustom Dry Series", "Ride Bronz Cymbals Roots", "Splash Turkish moderate HH14", "HitHat Meinl Class Custom Dark", "Zeus Stack Clap Zs13 Trio", "22 Waldman Ottoman Ride", "Crash BFC Dry Dark Holed"]
+polegadas = [18, 21, 6, 14, "9/11/13", 22, 20]
+tipagem = ["B8", "B20", "Latão", "B8", "B10", "B20", "Bronze"]
+espessura = ["Fino-Médio", "Fino-Médio", "Fino", "Fino-Médio", "Fino", "Grosso", "Médio"]
+preco = [2.763, 3.569, 1.079, 4.876, 1.113, 1.750, 1.587]
+# criando o dicionário
+dados_modelos = {
+    'Pratos': modelos,
+    'Polegadas': polegadas,
+    'Tipagem': tipagem,
+    'Espessura': espessura,
+    'Preço': preco
+}
+# Todas as informações foram tiradas de diversos sites de compras de materiais músicais
+modelos_df = pd.DataFrame(dados_modelos)
+display(modelos_df)
+
+
+print ("Questão 1 - Apresentar o output:")
+display(modelos_df)
+# a função display é usada para deixar com uma estética mais bonita e organizada
+
+
+print("Questão 2 - Tamanho do dataframe (linhas, colunas):")
+print(modelos_df.shape)
+# a função "shape" é usada para contar quantas linhas e quantas colunas existem no código
+
+
+print ("Questão 3 - Acessar a linha(x) e apresentar:")
+display(modelos_df.loc[[3]])
+# loc é uma unção de localização e o index para localizar qual objeto você deseja
+
+
+print("Questão 4 - Verificação se o dataframe está vazio:")
+def esta_vazio(df):
+  if modelos_df.empty:
+   return "O dataframe está vazio."
+  else:
+    return f"O dataframe não está vazio."
+print(f"Está vazio ou não...?\n\n{esta_vazio(df=modelos_df)}")  
+
+
+print("5) Primeiros 5 registros:")
+display(modelos_df.head(5))
+
+
+# Esse metodo ele realiza a exclusão de uma linha, mas eu não consegui fazer a tabela aparecer aqui
+modelos_df = modelos_df.drop(5)
+
+
+# Realize a adição de uma linha com um novo Item através do metodo len, e cada item do objeto em ordem correta.
+novo_item = ["Crash BFC Dry Dark Holed", 22, "B20", "Fino-Médio", 1.587]
+modelos_df.loc[len(modelos_df)] = novo_item
+display (modelos_df)
+
+
+dataframe_transposed = modelos_df.T
+print("8) Transposição da coluna para a linha:")
+display(dataframe_transposed)
+modelos_df = modelos_df.transpose()
+
+
+print("9) 1ª e 2ª coluna:")
+display(modelos_df.iloc[:, :2]) #ou
+display(modelos_df.iloc[:, 0:2])
+
+Questão 10 - Como foi o desenvolvimento
+#Bom... o desenvolvimento desse projeto foi muito desafiador, pois até eu começar esse projeto eu não tinha feito algo tão grande e tão complexo, então partindo para o desenvolvimento
+#Eu pensei sobre esse assunto pois sou muito inserido nesse meio desde a minha infância, sou baterista tem 11 anos, e conheço esse mundo muito mias do que conheço qualquer outra coisa, então para mim
+#foi um pouco óbvio o assunto que eu deveria abordar, por todos esses motivos, mas partindo para a ação, eu iniciei fazendo minha lista meu dicionário e importando minha biblioteca, a parte da pesquisa foi
+#a mais fácil, pois como eu já tinhha todos esses conceitos de cabeça eu somente fiz uma breve pesquisa para saber o valor atual de cada item, eu utilizei tecnicas de outros notebooks que criamos juntos dentro
+#da sala de aula e outros eu mesmo aprendi com alguns videos no YT, como no canal do "Programação Dinâmica" que até me explicou alguns conceitos que eu não sabia, e também a ajuda da IA do próprio colab em se eu não me engano em duas questões
+#onde eu não tinha ideia de para onde ir, mas tudo de forma dinâmica e com muita aprendizagem, e tentando utilizar e explorar o máximo da minha própria cabeça, lembrando que eu utilizei o colab como principal e única IDE.
+#OBS: Todos os meus comentários são ridiculamente constrangedores pois ainda não peguei bem o jeito de se comentar um código.
